@@ -57,8 +57,23 @@ function addBotMessage(message) {
 // Simple bot response generator
 function getBotResponse(input) {
   const lowerInput = input.toLowerCase();
+
   if (lowerInput.includes("hello") || lowerInput.includes("hi")) {
     return "Hi there! How can I help you today?";
+  } else if (lowerInput.includes("bye")) {
+    return "Goodbye! Have a great day!";
+  } else if (lowerInput.includes("weather")) {
+    return "Currently, I can't fetch live weather data, but it's always good to check a weather app!";
+  } else if (lowerInput.includes("time")) {
+    const now = new Date();
+    return `The current time is ${now.toLocaleTimeString()}.`;
+  } else if (lowerInput.includes("joke")) {
+    const jokes = [
+      "Why don't scientists trust atoms? Because they make up everything!",
+      "Why was the math book sad? It had too many problems.",
+      "Why don't skeletons fight each other? They don't have the guts."
+    ];
+    return jokes[Math.floor(Math.random() * jokes.length)];
   } else if (lowerInput.includes("play")) {
     return "Sure, which game would you like to play?";
   } else {
