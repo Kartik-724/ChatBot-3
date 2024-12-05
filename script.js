@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Welcome message
-  addBotMessage("Hello! I'm your friendly chatbot. How can I assist you today?");
+  addBotMessage("Hello! I'm your friendly chatbot. How can I assist you today? Enter 'start chat' to get a basic list of commmands :)");
 
   // Event listeners for game buttons
   document.getElementById("tic-tac-toe-btn").addEventListener("click", openTicTacToe);
