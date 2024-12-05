@@ -73,8 +73,8 @@ function getBotResponse(input) {
     const jokes = [
       "Why don't scientists trust atoms? Because they make up everything!😂",
       "Why was the math book sad? It had too many problems.😒",
-      "Why don't skeletons fight each other? They don't have the guts.🩻"
-      "Why did the scarecrow win an award? Because he was outstanding in his field!👌"
+      "Why don't skeletons fight each other? They don't have the guts.🩻",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!👌",
       "Why was the bicycle fell over? Because it was two-tired!🤣"
     ];
     return jokes[Math.floor(Math.random() * jokes.length)];
