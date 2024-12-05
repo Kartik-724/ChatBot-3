@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Welcome message
-  addBotMessage("Hello! I'm your friendly chatbot. How can I assist you today? Enter 'start chat' to get a basic list of commmands :)");
+  addBotMessage("Hello! I'm your friendly chatbot. How can I assist you today?");
 
   // Event listeners for game buttons
   document.getElementById("tic-tac-toe-btn").addEventListener("click", openTicTacToe);
@@ -58,7 +58,7 @@ function addBotMessage(message) {
 function getBotResponse(input) {
   const lowerInput = input.toLowerCase();
 
-  if (lowerInput.includes("hello") || lowerInput.includes("hi")) {
+ if (lowerInput.includes("hello") || lowerInput.includes("hi")) {
     return "Hi there! How can I help you today?";
   } else if (lowerInput.includes("bye")) {
     return "Goodbye! Have a great day!";
