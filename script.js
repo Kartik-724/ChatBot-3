@@ -58,8 +58,8 @@ function addBotMessage(message) {
 function getBotResponse(input) {
   const lowerInput = input.toLowerCase();
 
- if (lowerInput.includes("hello") || lowerInput.includes("hi")) {
-    return "Hi there! How can I help you today?";
+  if (lowerInput.includes("hello") || lowerInput.includes("hi")) {
+    return "Hi there! How can I help you today? Enter 'start chat' to get a basic list of commmands.";
   } else if (lowerInput.includes("bye")) {
     return "Goodbye! Have a great day!";
   } else if (lowerInput.includes("weather")) {
