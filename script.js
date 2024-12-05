@@ -107,3 +107,58 @@ function getBotResponse(input) {
     return "I'm here to help! You can ask me anything or play a game.";
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  let currentRiddle = null;
+
+  // Add riddles functionality
+  const riddles = [
+    { question: "What has to be broken before you can use it?", answer: "An egg" },
+    { question: "I’m tall when I’m young, and I’m short when I’m old. What am I?", answer: "A candle" },
+    { question: "What has a heart that doesn’t beat?", answer: "An artichoke" },
+  ];
+
+  function getRiddle() {
+    currentRiddle = riddles[Math.floor(Math.random() * riddles.length)];
+    return currentRiddle.question;
+  }
+
+  function getBotResponse(input) {
+    const lowerInput = input.toLowerCase();
+
+    if (lowerInput.includes("riddle")) {
+      return `Here's a riddle for you: ${getRiddle()} Type 'answer' to see the solution.`;
+    } else if (lowerInput === "answer") {
+      if (currentRiddle) {
+        const answer = currentRiddle.answer;
+        currentRiddle = null; // Reset riddle after answering
+        return `The answer is: ${answer}. Want another one? Just type "riddle"!`;
+      } else {
+        return "You haven't asked for a riddle yet! Type 'riddle' to get started.";
+      }
+    } else if (lowerInput.includes("your purpose")) {
+      return "I am here to assist you with games, riddles, and friendly conversation!";
+    } else if (lowerInput.includes("hello") || lowerInput.includes("hi")) {
+      return "Hi there! How can I help you today?";
+    } else if (lowerInput.includes("bye")) {
+      return "Goodbye! Have a great day!";
+    } else if (lowerInput.includes("weather")) {
+      return "Currently, I can't fetch live weather data, but it's always good to check a weather app!";
+    } else if (lowerInput.includes("time")) {
+      const now = new Date();
+      return `The current time is ${now.toLocaleTimeString()}.`;
+    } else if (lowerInput.includes("joke")) {
+      const jokes = [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "Why was the math book sad? It had too many problems.",
+        "Why don't skeletons fight each other? They don't have the guts."
+      ];
+      return jokes[Math.floor(Math.random() * jokes.length)];
+    } else if (lowerInput.includes("play")) {
+      return "Sure, which game would you like to play?";
+    } else {
+      return "I'm here to help! You can ask me anything or play a game.";
+    }
+  }
+});
+
