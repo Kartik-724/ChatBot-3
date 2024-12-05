@@ -21,50 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("close-rps").addEventListener("click", closeRPS);
 });
 
-// Riddle Data
-const riddles = [
-  { question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?", answer: "An echo" },
-  { question: "I’m light as a feather, yet the strongest person can’t hold me for five minutes. What am I?", answer: "Your breath" },
-  { question: "The more of this there is, the less you see. What is it?", answer: "Darkness" }
-];
-
-// Flag to track if the bot is waiting for a riddle answer
-let awaitingRiddleAnswer = false;
-let currentRiddleIndex = null;
-
-// Function to get a riddle
-function getRiddle() {
-  currentRiddleIndex = Math.floor(Math.random() * riddles.length);
-  return riddles[currentRiddleIndex].question;
-}
-
-// Function to check riddle answer
-function checkRiddleAnswer(input) {
-  if (currentRiddleIndex === null) return false;
-
-  const correctAnswer = riddles[currentRiddleIndex].answer.toLowerCase();
-  currentRiddleIndex = null; // Reset after checking
-  return input.toLowerCase() === correctAnswer;
-}
-
-// Modify the getBotResponse function to handle riddles
-function getBotResponse(input) {
-  const lowerInput = input.toLowerCase();
-
-  if (awaitingRiddleAnswer) {
-    awaitingRiddleAnswer = false; // Reset the flag
-    if (checkRiddleAnswer(lowerInput)) {
-      return "That's correct! Well done! 🎉";
-    } else {
-      return `Oops! The correct answer was "${riddles[currentRiddleIndex].answer}". Want another riddle?`;
-    }
-  }
-
-  if (lowerInput.includes("riddle")) {
-    awaitingRiddleAnswer = true;
-    return `Here's your riddle: ${getRiddle()} (Type your answer!)`;
-  }
-
 // Function to send user message
 function sendMessage() {
   const userInput = document.getElementById("user-input").value.trim();
