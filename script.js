@@ -59,7 +59,7 @@ function getBotResponse(input) {
   const lowerInput = input.toLowerCase();
 
   if (lowerInput.includes("hello") || lowerInput.includes("hi")) {
-    return "Hi there! How can I help you today?";
+    return "Hi there! How can I help you today? Enter 'start chat' to get a basic list of commmands.";
   } else if (lowerInput.includes("bye")) {
     return "Goodbye! Have a great day!";
   } else if (lowerInput.includes("weather")) {
@@ -68,12 +68,14 @@ function getBotResponse(input) {
     const now = new Date();
     return `The current time is ${now.toLocaleTimeString()}.`;
   } else if (lowerInput.includes("start chat")) {
-    return "Here are some commmands you can try: 1)Hi 2)Weather 3) Time 4)Joke 5)Bye . You can also press the button above to play the respective games.";
+    return "Here are some commmands you can try: 1)Hi ___ 2)Weather ___ 3)Time ___ 4)Joke___ 5)Bye ___ . You can also press the buttons above to play the respective games.";
   } else if (lowerInput.includes("joke")) {
     const jokes = [
-      "Why don't scientists trust atoms? Because they make up everything!",
-      "Why was the math book sad? It had too many problems.",
-      "Why don't skeletons fight each other? They don't have the guts."
+      "Why don't scientists trust atoms? Because they make up everything!😂",
+      "Why was the math book sad? It had too many problems.😒",
+      "Why don't skeletons fight each other? They don't have the guts.🩻"
+      "Why did the scarecrow win an award? Because he was outstanding in his field!👌"
+      "Why was the bicycle fell over? Because it was two-tired!🤣"
     ];
     return jokes[Math.floor(Math.random() * jokes.length)];
   } else if (lowerInput.includes("play")) {
