@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enhanced Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="chatbot-container">
+    <div id="welcome-message">
+      <h1>Welcome to the Chatbot!</h1>
+      <p>Interact with me or play some games below.</p>
+    </div>
+
+    <div id="game-buttons">
+      <button id="tic-tac-toe-btn">
+        <svg class="svg-wrapper" width="24" height="24" viewBox="0 0 24 24">
+          <!-- SVG content for Tic-Tac-Toe icon -->
+          <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+          <line x1="8" y1="8" x2="16" y2="16" stroke="white" stroke-width="2"/>
+          <line x1="16" y1="8" x2="8" y2="16" stroke="white" stroke-width="2"/>
+        </svg>
+        <span>Play Tic-Tac-Toe</span>
+      </button>
+      <button id="rock-paper-scissors-btn">
+        <svg class="svg-wrapper" width="24" height="24" viewBox="0 0 24 24">
+          <!-- SVG content for Rock Paper Scissors icon -->
+          <path d="M12 2 L15 8 L22 9 L17 14 L18 21 L12 18 L6 21 L7 14 L2 9 L9 8 Z" stroke="white" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Play Rock Paper Scissors</span>
+      </button>
+    </div>
+
+    <div id="chat-container">
+      <div id="chat-box">
+        <!-- Chat messages will appear here -->
+      </div>
+      <div id="input-area">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <!-- SVG content for send icon -->
+            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="white"/>
+          </svg>
+          <span>Send</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tic-Tac-Toe Modal -->
+  <div id="tic-tac-toe-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-ttt">&times;</span>
+      <h2>Tic-Tac-Toe</h2>
+      <div id="tic-tac-toe-game">
+        <!-- Tic-Tac-Toe game will be rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Rock Paper Scissors Modal -->
+  <div id="rps-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-rps">&times;</span>
+      <h2>Rock Paper Scissors</h2>
+      <div id="rps-game">
+        <!-- Rock Paper Scissors game will be rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

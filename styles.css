@@ -1,0 +1,289 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chatbot-container {
+  width: 90%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Welcome Message */
+#welcome-message {
+  margin-bottom: 20px;
+}
+
+#welcome-message h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+#welcome-message p {
+  font-size: 1.2em;
+}
+
+/* Game Buttons */
+#game-buttons {
+  margin-bottom: 20px;
+}
+
+#game-buttons button {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#game-buttons button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+#game-buttons button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+#game-buttons button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+#game-buttons button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+#game-buttons button:hover span {
+  transform: translateX(5em);
+}
+
+#game-buttons button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/* Chat Container */
+#chat-container {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-box {
+  flex: 1;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.user-message {
+  background: rgba(255, 255, 255, 0.2);
+  align-self: flex-end;
+}
+
+.bot-message {
+  background: rgba(0, 0, 0, 0.3);
+  align-self: flex-start;
+}
+
+/* Input Area */
+#input-area {
+  display: flex;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  font-size: 1em;
+}
+
+#send-btn {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#send-btn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+#send-btn svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+#send-btn:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+#send-btn:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+#send-btn:hover span {
+  transform: translateX(5em);
+}
+
+#send-btn:active {
+  transform: scale(0.95);
+}
+
+/* Modals */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 5% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px; /* Could be more or less, depending on screen size */
+  border-radius: 16px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Game Styles */
+#tic-tac-toe-game, #rps-game {
+  margin-top: 20px;
+}
+
+/* Tic-Tac-Toe Styles */
+#tic-tac-toe-game {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.ttt-cell {
+  width: 100px;
+  height: 100px;
+  background: #6a11cb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.ttt-cell:hover {
+  background: #2575fc;
+}
+
+/* Rock Paper Scissors Styles */
+#rps-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rps-options {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.rps-option {
+  width: 100px;
+  height: 100px;
+  background: #6a11cb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.rps-option:hover {
+  transform: scale(1.1);
+}
+
+.rps-result {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+
