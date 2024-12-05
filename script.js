@@ -67,6 +67,8 @@ function getBotResponse(input) {
   } else if (lowerInput.includes("time")) {
     const now = new Date();
     return `The current time is ${now.toLocaleTimeString()}.`;
+  } else if (lowerInput.includes("start chat")) {
+    return "Here are some commmands you can try: 1)Hi 2)Weather 3) Time 4)Joke 5)Bye . You can also press the button above to play the respective games.";
   } else if (lowerInput.includes("joke")) {
     const jokes = [
       "Why don't scientists trust atoms? Because they make up everything!",
