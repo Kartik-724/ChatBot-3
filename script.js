@@ -67,6 +67,8 @@ function getBotResponse(input) {
   } else if (lowerInput.includes("time")) {
     const now = new Date();
     return `The current time is ${now.toLocaleTimeString()}.`;
+  } else if (lowerInput.includes("how are you")) {
+    return "I am feeling very good, thanks for asking. Hope you are also fine";
   } else if (lowerInput.includes("start chat")) {
     return "Here are some commmands you can try: 1)Hi ___ 2)Weather ___ 3)Time ___ 4)Joke___ 5)Bye ___ . You can also press the buttons above to play the respective games.";
   } else if (lowerInput.includes("joke")) {
