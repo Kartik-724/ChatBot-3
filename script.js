@@ -63,7 +63,7 @@ function getBotResponse(input) {
   } else if (lowerInput.includes("bye")) {
     return "Goodbye! Have a great day!";
   } else if (lowerInput.includes("weather")) {
-    return "Currently, I can't fetch live weather data, but it's always good to check a weather app!";
+    return "Currently, It is 29°C in Chandshi, Nashik with winds upto 6km/h and 55% humidity.";
   } else if (lowerInput.includes("time")) {
     const now = new Date();
     return `The current time is ${now.toLocaleTimeString()}.`;
